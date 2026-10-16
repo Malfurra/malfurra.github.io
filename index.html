@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO Meta Tags for Google Indexing -->
+  <title>Muhammad Yasin — Cloud & Infrastructure Engineering Studio</title>
+  <meta name="title" content="Muhammad Yasin — Cloud & Infrastructure Engineering Studio" />
+  <meta name="description"
+    content="Official portfolio of Muhammad Yasin. Cloud & Site Reliability Engineer (SRE) specializing in AWS, GCP, Azure, Terraform, Kubernetes, and Linux Infrastructure at Sucode, SIJA student at SMKN 2 Yogyakarta." />
+  <meta name="keywords"
+    content="Muhammad Yasin, Malfurra, its_sinn01, Cloud Engineer, AWS, GCP, Azure, Terraform, Kubernetes, SRE, SUCODE-TEAM, SMKN 2 Yogyakarta, SIJA" />
+  <meta name="author" content="Muhammad Yasin" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://malfurra.github.io/" />
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://malfurra.github.io/" />
+  <meta property="og:title" content="Muhammad Yasin — Cloud & SRE Studio" />
+  <meta property="og:description"
+    content="Cloud Engineer & Infrastructure Specialist. Focusing on AWS, GCP, Azure, Terraform, and Enterprise Linux/SRE architectures." />
+
+  <!-- Schema.org JSON-LD for Google Knowledge Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Muhammad Yasin",
+    "alternateName": ["Malfurra", "its_sinn01"],
+    "jobTitle": "Cloud & Infrastructure Engineer",
+    "description": "Cloud & Site Reliability Engineer (SRE) specializing in AWS, GCP, Azure, Terraform, and Linux Infrastructure. Student at SMKN 2 Yogyakarta (SIJA).",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Yogyakarta",
+      "addressRegion": "Special Region of Yogyakarta",
+      "addressCountry": "ID"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "SMKN 2 Yogyakarta (SIJA)"
+    },
+    "memberOf": {
+      "@type": "Organization",
+      "name": "SUCODE-TEAM",
+      "url": "https://github.com/SUCODE-TEAM"
+    },
+    "url": "https://github.com/Malfurra",
+    "sameAs": [
+      "https://github.com/Malfurra",
+      "https://www.linkedin.com/in/itssinn01",
+      "https://www.linkedin.com/in/itssinn01",
+      "https://www.youtube.com/@its_sinn01",
+      "https://www.instagram.com/its_sinn01/",
+      "https://t.me/malfurra"
+    ]
+  }
+  </script>
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Inter"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      letter-spacing: -0.011em;
+    }
+
+    @keyframes cursorBlink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .type-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 0.88em;
+      background-color: currentColor;
+      margin-left: 2px;
+      vertical-align: -0.06em;
+      animation: cursorBlink 1s step-end infinite;
+    }
+
+  </style>
+</head>
+
+<body
+  class="bg-white text-[#141414] dark:bg-[#0B0B0C] dark:text-[#F4F4F5] font-sans transition-colors duration-300 min-h-screen flex flex-col selection:bg-[#18181B] selection:text-white dark:selection:bg-white dark:selection:text-[#18181B]">
+
+  <!-- Minimal Toast Notification -->
+  <div id="toast"
+    class="fixed bottom-5 right-5 z-50 translate-y-20 opacity-0 pointer-events-none transition-all duration-300 bg-[#18181B] text-white dark:bg-white dark:text-[#18181B] px-4 py-2.5 rounded-md text-xs font-medium shadow-lg flex items-center gap-2.5">
+    <span class="w-1.5 h-1.5 rounded-full bg-current"></span>
+    <span id="toastMsg">Copied to clipboard</span>
+  </div>
+
+  <div class="sticky top-0 z-50 w-full max-w-[1080px] mx-auto px-3.5 sm:px-6 pt-3 pb-1">
+    <header
+      class="relative bg-[#F3F3F1]/90 dark:bg-[#161618]/90 backdrop-blur-md rounded-[10px] px-4 sm:px-5 py-3 flex items-center justify-between transition-colors border border-black/5 dark:border-white/5 shadow-xs">
+
+      <a href="#" class="flex items-center gap-4 sm:gap-5 focus:outline-none group">
+        <svg class="w-[68px] sm:w-[76px] h-[28px] text-[#141414] dark:text-[#F4F4F5] shrink-0" viewBox="0 0 88 32"
+          fill="none" xmlns="http://www.w3.org/2000/svg">
+          <line x1="2" y1="16" x2="86" y2="16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          <line x1="43" y1="3" x2="43" y2="29" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          <line x1="43" y1="16" x2="59" y2="4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          <line x1="43" y1="16" x2="27" y2="28" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" />
+          <line x1="35" y1="9" x2="43" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+        </svg>
+
+        <div class="leading-[1.22] text-[14px]">
+          <div class="font-medium text-[#141414] dark:text-[#F4F4F5]">Muhammad Yasin</div>
+          <div class="font-normal text-[#6E6E73] dark:text-zinc-400">Cloud &amp; Infrastructure Studio</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-[13.5px] text-[#6E6E73] dark:text-zinc-400">
+        <a href="#about" class="hover:text-[#141414] dark:hover:text-white transition-colors">About</a>
+        <a href="#capabilities" class="hover:text-[#141414] dark:hover:text-white transition-colors">Capabilities</a>
+        <a href="#environment" class="hover:text-[#141414] dark:hover:text-white transition-colors">Environment</a>
+        <a href="#profile-init" class="hover:text-[#141414] dark:hover:text-white transition-colors">Profile Init</a>
+        <a href="#footprint" class="hover:text-[#141414] dark:hover:text-white transition-colors">Architecture</a>
+        <a href="#contact" class="hover:text-[#141414] dark:hover:text-white transition-colors">Contact</a>
+      </nav>
+
+      <button id="menuBtn" type="button" aria-label="Toggle Menu"
+        class="w-9 h-9 flex flex-col items-center justify-center gap-[5px] text-[#141414] dark:text-[#F4F4F5] focus:outline-none">
+        <span id="bar1" class="w-[18px] h-[1.6px] bg-current transition-transform duration-200"></span>
+        <span id="bar2" class="w-[18px] h-[1.6px] bg-current transition-transform duration-200"></span>
+      </button>
+
+      <div id="navDropdown"
+        class="hidden absolute left-0 right-0 top-[calc(100%+6px)] z-50 bg-[#F3F3F1] dark:bg-[#161618] border border-black/5 dark:border-white/10 rounded-[12px] p-5 shadow-xl">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[14px]">
+          <a href="#about"
+            class="nav-sheet-link px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between">
+            <span>About Muhammad Yasin</span>
+            <span class="text-xs text-[#6E6E73]">01</span>
+          </a>
+          <a href="#capabilities"
+            class="nav-sheet-link px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between">
+            <span>Cloud &amp; Infrastructure Stack</span>
+            <span class="text-xs text-[#6E6E73]">02</span>
+          </a>
+          <a href="#environment"
+            class="nav-sheet-link px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between">
+            <span>Development Environment</span>
+            <span class="text-xs text-[#6E6E73]">03</span>
+          </a>
+          <a href="#profile-init"
+            class="nav-sheet-link px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between">
+            <span>Infrastructure Spec (profile.ts)</span>
+            <span class="text-xs text-[#6E6E73]">04</span>
+          </a>
+          <a href="#footprint"
+            class="nav-sheet-link px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between">
+            <span>Cloud Repositories &amp; Matrix</span>
+            <span class="text-xs text-[#6E6E73]">05</span>
+          </a>
+          <a href="#contact"
+            class="nav-sheet-link px-3 py-2.5 rounded-lg hover:bg-black/5 dark:hover:bg-white/5 flex items-center justify-between">
+            <span>Contact &amp; Socials</span>
+            <span class="text-xs text-[#6E6E73]">06</span>
+          </a>
+        </div>
+
+        <div
+          class="mt-4 pt-4 border-t border-black/10 dark:border-white/10 flex flex-wrap items-center justify-between gap-3 text-xs text-[#6E6E73] dark:text-zinc-400">
+          <span>Muhammad Yasin · Yogyakarta</span>
+          <button id="themeToggle" type="button"
+            class="px-3.5 py-1.5 rounded-md bg-white dark:bg-[#222225] text-[#141414] dark:text-white font-medium border border-black/10 dark:border-white/10">
+            Switch Theme
+          </button>
+        </div>
+      </div>
+
+    </header>
+  </div>
+
+  <main class="w-full max-w-[1080px] mx-auto px-3.5 sm:px-6 flex-grow">
+
+    <section class="pt-2 pb-16 sm:pb-24">
+
+      <div
+        class="relative w-full aspect-[4/4.25] sm:aspect-[16/8.6] rounded-[16px] overflow-hidden bg-[#F3F3F1] dark:bg-[#111113] select-none transition-colors duration-300">
+
+        <div
+          class="w-full h-full text-[#141414] dark:text-white p-6 sm:p-12 flex flex-col justify-between relative transition-colors duration-300">
+          <div class="flex items-center justify-between text-xs text-[#6E6E73] dark:text-zinc-400">
+            <span class="tracking-widest uppercase font-medium">MUHAMMAD YASIN</span>
+          </div>
+
+          <div class="my-auto space-y-3 max-w-xl">
+            <div class="text-xs uppercase tracking-widest text-[#6E6E73] dark:text-zinc-400 font-medium">
+              Cloud Engineer &amp; SRE Specialist
+            </div>
+            <div class="text-2xl sm:text-4xl font-normal tracking-tight text-[#141414] dark:text-white leading-[1.2]">
+              “Architecting resilient multi-cloud systems &amp; infrastructure.”
+            </div>
+            <p class="text-xs sm:text-sm text-[#6E6E73] dark:text-zinc-400 leading-relaxed">
+              Cloud Engineer at Sucode · Terraform &amp; Kubernetes Expert · Multi-Cloud Architecture (AWS, GCP, Azure)
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2 text-[11px] text-[#52525B] dark:text-zinc-300">
+            <span class="px-2.5 py-1 rounded bg-black/5 dark:bg-white/10 transition-colors">Terraform IaC</span>
+            <span class="px-2.5 py-1 rounded bg-black/5 dark:bg-white/10 transition-colors">AWS / GCP / Azure</span>
+            <span class="px-2.5 py-1 rounded bg-black/5 dark:bg-white/10 transition-colors">SMKN 2 Yogyakarta (SIJA)</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-7 sm:mt-9 max-w-3xl">
+        <h1 class="text-[28px] sm:text-[40px] md:text-[46px] font-normal tracking-[-0.03em] leading-[1.18]">
+          <span class="block text-[#141414] dark:text-[#F4F4F5] min-h-[1.2em]">
+            <span id="typewriterText">Hello, I am Muhammad Yasin.</span><span class="type-cursor"></span>
+          </span>
+          <span class="block text-[#9CA3AF] dark:text-zinc-500 mt-0.5">
+            Cloud &amp; Site Reliability Engineer (SRE).
+          </span>
+        </h1>
+
+        <p
+          class="mt-4 text-[15px] sm:text-[16px] text-[#6E6E73] dark:text-zinc-400 leading-relaxed max-w-2xl font-normal">
+          I am a Cloud Engineer at Sucode and an IT network systems student at SMKN 2 Yogyakarta, specializing in
+          enterprise multi-cloud provisioning (AWS, GCP, Azure), Terraform automation, and secure Linux infrastructures.
+        </p>
+
+        <div class="mt-7 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 items-start">
+          <a href="#footprint"
+            class="inline-flex items-center justify-center bg-[#18181B] hover:bg-[#27272A] text-white dark:bg-[#F4F4F5] dark:text-[#141414] dark:hover:bg-zinc-200 rounded-[6px] px-6 py-3.5 text-[15px] font-normal transition-colors">
+            Explore cloud architecture
+          </a>
+          <a href="#about"
+            class="inline-flex items-center justify-center px-6 py-3 text-[15px] font-normal text-[#141414] dark:text-[#F4F4F5] hover:opacity-70 transition-opacity">
+            About Muhammad Yasin
+          </a>
+        </div>
+
+        <div
+          class="mt-8 pt-6 border-t border-[#ECECEA] dark:border-zinc-800/80 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-[#6E6E73] dark:text-zinc-400">
+          <a href="https://github.com/Malfurra" target="_blank" rel="noopener"
+            class="hover:text-[#141414] dark:hover:text-white transition-colors">
+            GitHub <span class="text-[#141414] dark:text-zinc-200 font-medium">@Malfurra</span> ↗
+          </a>
+          <a href="https://www.linkedin.com/in/muhammad-yasin-8a5165335" target="_blank" rel="noopener"
+            class="hover:text-[#141414] dark:hover:text-white transition-colors">
+            LinkedIn <span class="text-[#141414] dark:text-zinc-200 font-medium">Muhammad Yasin</span> ↗
+          </a>
+          <a href="https://www.youtube.com/@its_sinn01" target="_blank" rel="noopener"
+            class="hover:text-[#141414] dark:hover:text-white transition-colors">
+            YouTube <span class="text-[#141414] dark:text-zinc-200 font-medium">@its_sinn01</span> ↗
+          </a>
+          <a href="https://t.me/malfurra" target="_blank" rel="noopener"
+            class="hover:text-[#141414] dark:hover:text-white transition-colors">
+            Telegram <span class="text-[#141414] dark:text-zinc-200 font-medium">@malfurra</span> ↗
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="about" class="py-16 sm:py-24 border-t border-[#ECECEA] dark:border-zinc-800/80">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="text-[13px] text-[#6E6E73] dark:text-zinc-400">Identity &amp; Background</div>
+          <h2 class="text-[26px] sm:text-[34px] font-normal tracking-[-0.025em] leading-[1.2]">
+            Meet Muhammad Yasin.
+            <span class="block text-[#9CA3AF] dark:text-zinc-500">Cloud &amp; SRE Engineer.</span>
+          </h2>
+          <p class="pt-2 text-[15px] text-[#52525B] dark:text-zinc-300 leading-relaxed">
+            <strong class="font-medium text-[#141414] dark:text-white">Muhammad Yasin</strong> is a Cloud Engineer at
+            Sucode and a <strong class="font-medium text-[#141414] dark:text-white">SIJA (Sistem Informasi, Jaringan,
+              dan Aplikasi)</strong> student at <strong class="font-medium text-[#141414] dark:text-white">SMKN 2
+              Yogyakarta</strong>.
+          </p>
+          <p class="text-[15px] text-[#6E6E73] dark:text-zinc-400 leading-relaxed">
+            He specializes in enterprise multi-cloud provisioning, Infrastructure as Code (IaC) with Terraform,
+            container orchestration, and robust Linux network security.
+          </p>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 sm:p-8">
+            <div
+              class="text-[13px] text-[#6E6E73] dark:text-zinc-400 pb-4 border-b border-black/10 dark:border-white/10">
+              Core Engineering Focus
+            </div>
+
+            <div class="divide-y divide-black/10 dark:divide-white/10">
+              <div class="py-4.5 sm:py-5 flex items-start gap-4">
+                <span class="text-[13px] text-[#9CA3AF] pt-0.5 w-6 shrink-0">01</span>
+                <p class="text-[15px] text-[#141414] dark:text-zinc-100 leading-relaxed">
+                  Designing multi-cloud infrastructures on <strong class="font-medium">AWS, Google Cloud (GCP), and
+                    Microsoft Azure</strong>
+                </p>
+              </div>
+
+              <div class="py-4.5 sm:py-5 flex items-start gap-4">
+                <span class="text-[13px] text-[#9CA3AF] pt-0.5 w-6 shrink-0">02</span>
+                <p class="text-[15px] text-[#141414] dark:text-zinc-100 leading-relaxed">
+                  Automating cloud provisioning and state management using <strong class="font-medium">Terraform and
+                    Ansible</strong>
+                </p>
+              </div>
+
+              <div class="py-4.5 sm:py-5 flex items-start gap-4">
+                <span class="text-[13px] text-[#9CA3AF] pt-0.5 w-6 shrink-0">03</span>
+                <p class="text-[15px] text-[#141414] dark:text-zinc-100 leading-relaxed">
+                  Building containerized deployments with <strong class="font-medium">Docker, Kubernetes (K8s), and
+                    Helm</strong>
+                </p>
+              </div>
+
+              <div class="py-4.5 sm:py-5 flex items-start gap-4">
+                <span class="text-[13px] text-[#9CA3AF] pt-0.5 w-6 shrink-0">04</span>
+                <p class="text-[15px] text-[#141414] dark:text-zinc-100 leading-relaxed">
+                  Managing private cloud virtualization via <strong class="font-medium">Proxmox VE 3-Tier
+                    clusters</strong> and VMware ESXi
+                </p>
+              </div>
+
+              <div class="pt-4.5 sm:pt-5 flex items-start gap-4">
+                <span class="text-[13px] text-[#9CA3AF] pt-0.5 w-6 shrink-0">05</span>
+                <p class="text-[15px] text-[#141414] dark:text-zinc-100 leading-relaxed">
+                  Hardening Linux servers (<strong class="font-medium">Ubuntu, Debian</strong>), BIND9 DNS, HAProxy load
+                  balancers, and <strong class="font-medium">nftables</strong> firewalls
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="capabilities" class="py-16 sm:py-24 border-t border-[#ECECEA] dark:border-zinc-800/80">
+
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-10">
+        <div>
+          <div class="text-[13px] text-[#6E6E73] dark:text-zinc-400 mb-2">Capabilities</div>
+          <h2 class="text-[26px] sm:text-[34px] font-normal tracking-[-0.025em] leading-[1.2]">
+            Cloud &amp; Infrastructure Stack.
+            <span class="block text-[#9CA3AF] dark:text-zinc-500">Enterprise provisioning and reliability.</span>
+          </h2>
+        </div>
+
+        <div class="flex flex-wrap gap-1.5 bg-[#F3F3F1] dark:bg-[#161618] p-1.5 rounded-[8px] self-start">
+          <button type="button" onclick="filterStack('all')" id="tab-all"
+            class="stack-tab px-3.5 py-1.5 rounded-[6px] text-[13px] bg-white dark:bg-[#262629] text-[#141414] dark:text-white font-medium shadow-sm transition-all">
+            All
+          </button>
+          <button type="button" onclick="filterStack('cloud')" id="tab-cloud"
+            class="stack-tab px-3.5 py-1.5 rounded-[6px] text-[13px] text-[#6E6E73] dark:text-zinc-400 hover:text-[#141414] dark:hover:text-white transition-all">
+            Multi-Cloud &amp; IaC
+          </button>
+          <button type="button" onclick="filterStack('sre')" id="tab-sre"
+            class="stack-tab px-3.5 py-1.5 rounded-[6px] text-[13px] text-[#6E6E73] dark:text-zinc-400 hover:text-[#141414] dark:hover:text-white transition-all">
+            Containers &amp; SRE
+          </button>
+          <button type="button" onclick="filterStack('net')" id="tab-net"
+            class="stack-tab px-3.5 py-1.5 rounded-[6px] text-[13px] text-[#6E6E73] dark:text-zinc-400 hover:text-[#141414] dark:hover:text-white transition-all">
+            Linux &amp; Security
+          </button>
+        </div>
+      </div>
+
+      <div class="space-y-8">
+
+        <div class="stack-group bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 sm:p-8" data-group="cloud">
+          <div class="flex items-center justify-between pb-4 mb-2 border-b border-black/10 dark:border-white/10">
+            <h3 class="text-[16px] font-medium text-[#141414] dark:text-white">Multi-Cloud Platforms &amp; IaC</h3>
+            <span class="text-[12px] text-[#6E6E73] dark:text-zinc-400">4 domains</span>
+          </div>
+
+          <div class="divide-y divide-black/10 dark:divide-white/10">
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Amazon Web Services (AWS)</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">EC2, S3, VPC, IAM, Lambda, RDS, Route53,
+                CloudFront</div>
+            </div>
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Google Cloud Platform (GCP)</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">Compute Engine, GKE, Cloud Storage, VPC
+                networks</div>
+            </div>
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Microsoft Azure</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">Virtual Machines, Azure Kubernetes Service
+                (AKS), Blob Storage</div>
+            </div>
+            <div class="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Terraform &amp; Ansible</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">Infrastructure as Code, modular state
+                management, automated config</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-group bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 sm:p-8" data-group="sre">
+          <div class="flex items-center justify-between pb-4 mb-2 border-b border-black/10 dark:border-white/10">
+            <h3 class="text-[16px] font-medium text-[#141414] dark:text-white">Containers, Orchestration &amp; SRE</h3>
+            <span class="text-[12px] text-[#6E6E73] dark:text-zinc-400">4 domains</span>
+          </div>
+
+          <div class="divide-y divide-black/10 dark:divide-white/10">
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Kubernetes &amp; Helm</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">Cluster deployment, pod orchestration, ingress
+                controllers</div>
+            </div>
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Docker &amp; Containerization</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">Multi-stage builds, Docker Compose, container
+                security</div>
+            </div>
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Proxmox VE Virtualization</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">Hypervisor clustering, LXC containers, KVM VMs,
+                storage pools</div>
+            </div>
+            <div class="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">CI/CD &amp; DevOps Pipelines</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">GitHub Actions, automated testing, deployment
+                workflows</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stack-group bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 sm:p-8" data-group="net">
+          <div class="flex items-center justify-between pb-4 mb-2 border-b border-black/10 dark:border-white/10">
+            <h3 class="text-[16px] font-medium text-[#141414] dark:text-white">Linux Administration &amp; Network
+              Security</h3>
+            <span class="text-[12px] text-[#6E6E73] dark:text-zinc-400">4 domains</span>
+          </div>
+
+          <div class="divide-y divide-black/10 dark:divide-white/10">
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Enterprise Linux</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">Ubuntu Server, Debian, RHEL hardening, Bash
+                &amp; Python scripting</div>
+            </div>
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Network Security &amp; Firewalls</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">nftables, iptables, DMZ network zoning,
+                WireGuard VPN</div>
+            </div>
+            <div class="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Load Balancing &amp; DNS</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">HAProxy, Nginx Proxy Manager, BIND9
+                authoritative DNS servers</div>
+            </div>
+            <div class="pt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
+              <div class="text-[15px] font-medium text-[#141414] dark:text-white">Observability &amp; Monitoring</div>
+              <div class="text-[14px] text-[#6E6E73] dark:text-zinc-400">Prometheus, Grafana telemetry dashboards, log
+                aggregation</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="environment" class="py-16 sm:py-24 border-t border-[#ECECEA] dark:border-zinc-800/80">
+
+      <div class="max-w-2xl mb-10">
+        <div class="text-[13px] text-[#6E6E73] dark:text-zinc-400 mb-2">Workspace &amp; Toolchain</div>
+        <h2 class="text-[26px] sm:text-[34px] font-normal tracking-[-0.025em] leading-[1.2]">
+          Development Environment.
+          <span class="block text-[#9CA3AF] dark:text-zinc-500">Configured for cloud automation and SRE tooling.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 flex flex-col justify-between">
+          <div class="text-[12px] text-[#6E6E73] dark:text-zinc-400">Operating System</div>
+          <div class="mt-6 space-y-3">
+            <div>
+              <div class="text-[11px] text-[#9CA3AF]">Primary</div>
+              <div class="text-[16px] font-medium text-[#141414] dark:text-white">Windows 11</div>
+            </div>
+            <div class="pt-3 border-t border-black/10 dark:border-white/10">
+              <div class="text-[11px] text-[#9CA3AF]">Secondary</div>
+              <div class="text-[14px] text-[#52525B] dark:text-zinc-300">Ubuntu Linux</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 flex flex-col justify-between">
+          <div class="text-[12px] text-[#6E6E73] dark:text-zinc-400">Terminal &amp; Shell</div>
+          <div class="mt-6 space-y-3">
+            <div>
+              <div class="text-[11px] text-[#9CA3AF]">Primary</div>
+              <div class="text-[16px] font-medium text-[#141414] dark:text-white">Git Bash / PowerShell</div>
+            </div>
+            <div class="pt-3 border-t border-black/10 dark:border-white/10">
+              <div class="text-[11px] text-[#9CA3AF]">Secondary</div>
+              <div class="text-[14px] text-[#52525B] dark:text-zinc-300">Bash / Zsh &amp; Termux</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 flex flex-col justify-between">
+          <div class="text-[12px] text-[#6E6E73] dark:text-zinc-400">Editor &amp; IDE</div>
+          <div class="mt-6 space-y-3">
+            <div>
+              <div class="text-[11px] text-[#9CA3AF]">Primary</div>
+              <div class="text-[16px] font-medium text-[#141414] dark:text-white">VS Code</div>
+            </div>
+            <div class="pt-3 border-t border-black/10 dark:border-white/10">
+              <div class="text-[11px] text-[#9CA3AF]">Secondary</div>
+              <div class="text-[14px] text-[#52525B] dark:text-zinc-300">Antigravity IDE</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 flex flex-col justify-between">
+          <div class="text-[12px] text-[#6E6E73] dark:text-zinc-400">IaC &amp; Cloud Tools</div>
+          <div class="mt-6 space-y-3">
+            <div>
+              <div class="text-[11px] text-[#9CA3AF]">Primary</div>
+              <div class="text-[16px] font-medium text-[#141414] dark:text-white">Terraform &amp; AWS CLI</div>
+            </div>
+            <div class="pt-3 border-t border-black/10 dark:border-white/10">
+              <div class="text-[11px] text-[#9CA3AF]">Secondary</div>
+              <div class="text-[14px] text-[#52525B] dark:text-zinc-300">Proxmox VE &amp; Docker</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mt-6 bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div>
+          <div class="text-[14px] font-medium text-[#141414] dark:text-white">Verify cloud infrastructure automation
+            script</div>
+          <div class="text-[13px] text-[#6E6E73] dark:text-zinc-400 mt-0.5">Terraform multi-cloud provider
+            initialization &amp; VPC provisioning</div>
+        </div>
+        <div class="flex flex-wrap items-center gap-2">
+          <button type="button" onclick="copyText('terraform init && terraform plan')"
+            class="px-4 py-2.5 rounded-[6px] bg-white dark:bg-[#222225] text-[#141414] dark:text-white text-[13px] font-mono border border-black/10 dark:border-white/10 hover:border-black/30 transition-colors">
+            terraform init &amp;&amp; terraform plan
+          </button>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="profile-init" class="py-16 sm:py-24 border-t border-[#ECECEA] dark:border-zinc-800/80">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+        <div class="lg:col-span-5 space-y-4">
+          <div class="text-[13px] text-[#6E6E73] dark:text-zinc-400">Infrastructure Specification</div>
+          <h2 class="text-[26px] sm:text-[34px] font-normal tracking-[-0.025em] leading-[1.2]">
+            Quick Profile Init.
+            <span class="block text-[#9CA3AF] dark:text-zinc-500">Structured in TypeScript.</span>
+          </h2>
+          <p class="text-[15px] text-[#6E6E73] dark:text-zinc-400 leading-relaxed">
+            Cloud infrastructure profile initialized for automated deployment and provisioning under Muhammad Yasin.
+          </p>
+
+          <div class="pt-2">
+            <button type="button" onclick="runProfileScript()"
+              class="bg-[#18181B] hover:bg-[#27272A] text-white dark:bg-white dark:text-[#141414] rounded-[6px] px-5 py-3 text-[14px] font-normal transition-colors">
+              Run profile.ts
+            </button>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div
+            class="rounded-[14px] bg-[#141416] text-zinc-200 overflow-hidden border border-black/10 dark:border-white/10">
+            <div
+              class="px-5 py-3.5 bg-[#1C1C1F] border-b border-white/10 flex items-center justify-between text-[12px] text-zinc-400">
+              <span class="font-mono">profile.ts</span>
+              <button type="button" onclick="copyProfileTS()" class="hover:text-white transition-colors">Copy
+                code</button>
+            </div>
+            <pre class="p-5 sm:p-6 font-mono text-[12.5px] leading-[1.65] overflow-x-auto text-zinc-300"><code>interface CloudEngineerProfile {
+  name: string;
+  role: string;
+  cloudProviders: string[];
+  iacTools: string[];
+  organization: string;
+  location: string;
+}
+
+const muhammadYasin: CloudEngineerProfile = {
+  name: 'Muhammad Yasin',
+  role: 'Cloud &amp; Site Reliability Engineer (SRE)',
+  cloudProviders: ['AWS', 'Google Cloud Platform (GCP)', 'Microsoft Azure'],
+  iacTools: ['Terraform', 'Ansible', 'Docker', 'Kubernetes'],
+  organization: '@SUCODE-TEAM &amp; SMKN 2 Yogyakarta (SIJA)',
+  location: 'Yogyakarta, Indonesia'
+};
+
+console.log(`Cloud Profile Initialized for ${muhammadYasin.name} ✦`);</code></pre>
+            <div
+              class="px-5 py-3 bg-[#1C1C1F] border-t border-white/10 font-mono text-[12px] flex items-center justify-between">
+              <span id="consoleOutput" class="text-white">&gt; Cloud Profile Initialized for Muhammad Yasin ✦</span>
+              <span id="consoleStatus" class="text-zinc-500">Ready</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="footprint" class="py-16 sm:py-24 border-t border-[#ECECEA] dark:border-zinc-800/80">
+
+      <div class="max-w-2xl mb-10">
+        <div class="text-[13px] text-[#6E6E73] dark:text-zinc-400 mb-2">Architecture &amp; Ecosystems</div>
+        <h2 class="text-[26px] sm:text-[34px] font-normal tracking-[-0.025em] leading-[1.2]">
+          Cloud Repositories &amp; Matrix.
+          <span class="block text-[#9CA3AF] dark:text-zinc-500">Infrastructure repositories and Terraform
+            modules.</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <div class="lg:col-span-5 bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 sm:p-7 space-y-6">
+          <div
+            class="text-[15px] font-medium text-[#141414] dark:text-white border-b border-black/10 dark:border-white/10 pb-3.5">
+            GitHub Repository Structure (@Malfurra)
+          </div>
+
+          <div class="space-y-5 text-[14px]">
+            <div>
+              <a href="https://github.com/Malfurra" target="_blank" rel="noopener"
+                class="font-medium text-[#141414] dark:text-white hover:underline">
+                github.com/Malfurra/
+              </a>
+              <ul
+                class="mt-2.5 space-y-2.5 pl-4 border-l border-black/15 dark:border-white/15 text-[#52525B] dark:text-zinc-400">
+                <li>
+                  <a href="https://github.com/Malfurra/Cloud-Computing" target="_blank" rel="noopener"
+                    class="hover:text-[#141414] dark:hover:text-white">
+                    <strong class="font-medium text-[#141414] dark:text-zinc-200">Cloud-Computing/</strong> — Terraform
+                    IaC modules for AWS &amp; GCP multi-region VPCs
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Malfurra" target="_blank" rel="noopener"
+                    class="hover:text-[#141414] dark:hover:text-white">
+                    <strong class="font-medium text-[#141414] dark:text-zinc-200">k8s-cluster-configs/</strong> —
+                    Kubernetes manifests &amp; Helm charts for microservices
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/Malfurra" target="_blank" rel="noopener"
+                    class="hover:text-[#141414] dark:hover:text-white">
+                    <strong class="font-medium text-[#141414] dark:text-zinc-200">linux-sre-hardening/</strong> —
+                    Automated Bash &amp; Ansible playbooks for server hardening
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="font-medium text-[#141414] dark:text-white">organizations/</div>
+              <ul
+                class="mt-2 space-y-2 pl-4 border-l border-black/15 dark:border-white/15 text-[#52525B] dark:text-zinc-400">
+                <li>
+                  <a href="https://github.com/SUCODE-TEAM" target="_blank" rel="noopener"
+                    class="hover:text-[#141414] dark:hover:text-white">
+                    <strong class="font-medium text-[#141414] dark:text-zinc-200">@SUCODE-TEAM/</strong> — Collaborative
+                    cloud infrastructure &amp; system architecture
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="font-medium text-[#141414] dark:text-white">socials-and-media/</div>
+              <ul
+                class="mt-2 space-y-2 pl-4 border-l border-black/15 dark:border-white/15 text-[#52525B] dark:text-zinc-400">
+                <li>
+                  <a href="https://www.linkedin.com/in/itssinn01" target="_blank" rel="noopener"
+                    class="hover:text-[#141414] dark:hover:text-white">
+                    <strong class="font-medium text-[#141414] dark:text-zinc-200">linkedin/</strong> — in/itssinn01
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.youtube.com/@its_sinn01" target="_blank" rel="noopener"
+                    class="hover:text-[#141414] dark:hover:text-white">
+                    <strong class="font-medium text-[#141414] dark:text-zinc-200">youtube/</strong> — @its_sinn01 (Cloud
+                    &amp; SIJA practical tutorials)
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 sm:p-7 overflow-hidden">
+          <div class="flex items-center justify-between border-b border-black/10 dark:border-white/10 pb-3.5 mb-4">
+            <div class="text-[15px] font-medium text-[#141414] dark:text-white">Cloud Architecture Matrix</div>
+            <span class="text-[12px] text-[#6E6E73] dark:text-zinc-400">Tech comparison</span>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-[14px]">
+              <thead>
+                <tr
+                  class="border-b border-black/10 dark:border-white/10 text-[12px] text-[#6E6E73] dark:text-zinc-400 font-normal">
+                  <th class="py-3 pr-4 font-normal">Architecture Domain</th>
+                  <th class="py-3 px-3 text-center font-normal">AWS / GCP / Azure</th>
+                  <th class="py-3 px-3 text-center font-normal">Terraform IaC</th>
+                  <th class="py-3 px-3 text-center font-normal">Kubernetes / K8s</th>
+                  <th class="py-3 pl-3 text-right font-normal">Deployment</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-black/10 dark:divide-white/10">
+                <tr>
+                  <td class="py-4 pr-4 font-medium text-[#141414] dark:text-white">Multi-Region Cloud VPC</td>
+                  <td class="py-4 px-3 text-center">✦</td>
+                  <td class="py-4 px-3 text-center">✦</td>
+                  <td class="py-4 px-3 text-center text-[#9CA3AF]">✗</td>
+                  <td class="py-4 pl-3 text-right text-[13px]">✦ (Production)</td>
+                </tr>
+                <tr>
+                  <td class="py-4 pr-4 font-medium text-[#141414] dark:text-white">Containerized Microservices</td>
+                  <td class="py-4 px-3 text-center">✦</td>
+                  <td class="py-4 px-3 text-center">✦</td>
+                  <td class="py-4 px-3 text-center">✦</td>
+                  <td class="py-4 pl-3 text-right text-[13px]">✦ (K8s / Helm)</td>
+                </tr>
+                <tr>
+                  <td class="py-4 pr-4 font-medium text-[#141414] dark:text-white">Proxmox Private Cloud</td>
+                  <td class="py-4 px-3 text-center text-[#9CA3AF]">✗</td>
+                  <td class="py-4 px-3 text-center">✦</td>
+                  <td class="py-4 px-3 text-center">✦</td>
+                  <td class="py-4 pl-3 text-right text-[13px]">✦ (Lab / Local)</td>
+                </tr>
+                <tr>
+                  <td class="py-4 pr-4 font-medium text-[#141414] dark:text-white">Linux SRE &amp; nftables Firewall
+                  </td>
+                  <td class="py-4 px-3 text-center text-[#9CA3AF]">✗</td>
+                  <td class="py-4 px-3 text-center">✦</td>
+                  <td class="py-4 px-3 text-center text-[#9CA3AF]">✗</td>
+                  <td class="py-4 pl-3 text-right text-[13px]">✦ (Ansible)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="contact" class="py-16 sm:py-24 border-t border-[#ECECEA] dark:border-zinc-800/80">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+
+        <div class="lg:col-span-5 space-y-3">
+          <div class="text-[13px] text-[#6E6E73] dark:text-zinc-400">Contact &amp; Socials</div>
+          <h2 class="text-[26px] sm:text-[34px] font-normal tracking-[-0.025em] leading-[1.2]">
+            Want to collaborate with Muhammad Yasin?
+            <span class="block text-[#9CA3AF] dark:text-zinc-500">Connect across platforms.</span>
+          </h2>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div
+            class="bg-[#F3F3F1] dark:bg-[#161618] rounded-[14px] p-6 sm:p-8 divide-y divide-black/10 dark:divide-white/10 text-[15px]">
+            <a href="https://github.com/Malfurra" target="_blank" rel="noopener"
+              class="py-3.5 first:pt-0 flex items-center justify-between hover:opacity-70 transition-opacity">
+              <span class="text-[#6E6E73] dark:text-zinc-400">GitHub</span>
+              <span class="font-medium text-[#141414] dark:text-white">@Malfurra ↗</span>
+            </a>
+            <a href="https://www.linkedin.com/in/muhammad-yasin-8a5165335" target="_blank" rel="noopener"
+              class="py-3.5 flex items-center justify-between hover:opacity-70 transition-opacity">
+              <span class="text-[#6E6E73] dark:text-zinc-400">LinkedIn</span>
+              <span class="font-medium text-[#141414] dark:text-white">Muhammad Yasin (in/itssinn01) ↗</span>
+            </a>
+            <a href="https://www.instagram.com/its_sinn01/" target="_blank" rel="noopener"
+              class="py-3.5 flex items-center justify-between hover:opacity-70 transition-opacity">
+              <span class="text-[#6E6E73] dark:text-zinc-400">Instagram</span>
+              <span class="font-medium text-[#141414] dark:text-white">@its_sinn01 ↗</span>
+            </a>
+            <a href="https://www.youtube.com/@its_sinn01" target="_blank" rel="noopener"
+              class="py-3.5 flex items-center justify-between hover:opacity-70 transition-opacity">
+              <span class="text-[#6E6E73] dark:text-zinc-400">YouTube</span>
+              <span class="font-medium text-[#141414] dark:text-white">@its_sinn01 ↗</span>
+            </a>
+            <a href="https://t.me/malfurra" target="_blank" rel="noopener"
+              class="py-3.5 flex items-center justify-between hover:opacity-70 transition-opacity">
+              <span class="text-[#6E6E73] dark:text-zinc-400">Telegram</span>
+              <span class="font-medium text-[#141414] dark:text-white">@malfurra ↗</span>
+            </a>
+            <a href="https://github.com/SUCODE-TEAM" target="_blank" rel="noopener"
+              class="py-3.5 flex items-center justify-between hover:opacity-70 transition-opacity">
+              <span class="text-[#6E6E73] dark:text-zinc-400">Team / Org</span>
+              <span class="font-medium text-[#141414] dark:text-white">@SUCODE-TEAM ↗</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer
+    class="w-full max-w-[1080px] mx-auto px-3.5 sm:px-6 py-10 border-t border-[#ECECEA] dark:border-zinc-800/80 text-[13px] text-[#6E6E73] dark:text-zinc-400 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div>Muhammad Yasin</div>
+    <div>SMKN 2 Yogyakarta (SIJA) · Cloud Engineer @ Sucode</div>
+  </footer>
+
+  <script>
+    const phrases = [
+      "Hello, I am Muhammad Yasin.",
+      "Cloud & SRE Engineer."
+    ];
+    let pIndex = 0;
+    let cIndex = phrases[0].length;
+    let deleting = true;
+    const typeEl = document.getElementById('typewriterText');
+
+    function stepTypewriter() {
+      const current = phrases[pIndex];
+      if (deleting) {
+        cIndex--;
+        typeEl.textContent = current.substring(0, cIndex);
+      } else {
+        cIndex++;
+        typeEl.textContent = current.substring(0, cIndex);
+      }
+
+      let delay = deleting ? 32 : 65;
+
+      if (!deleting && cIndex === current.length) {
+        delay = 2400;
+        deleting = true;
+      } else if (deleting && cIndex === 0) {
+        deleting = false;
+        pIndex = (pIndex + 1) % phrases.length;
+        delay = 350;
+      }
+      setTimeout(stepTypewriter, delay);
+    }
+
+    const menuBtn = document.getElementById('menuBtn');
+    const navDropdown = document.getElementById('navDropdown');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+
+    menuBtn.addEventListener('click', () => {
+      const isHidden = navDropdown.classList.toggle('hidden');
+      if (!isHidden) {
+        bar1.style.transform = 'translateY(3.3px) rotate(45deg)';
+        bar2.style.transform = 'translateY(-3.3px) rotate(-45deg)';
+      } else {
+        bar1.style.transform = 'none';
+        bar2.style.transform = 'none';
+      }
+    });
+
+    document.querySelectorAll('.nav-sheet-link').forEach(link => {
+      link.addEventListener('click', () => {
+        navDropdown.classList.add('hidden');
+        bar1.style.transform = 'none';
+        bar2.style.transform = 'none';
+      });
+    });
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+
+
+    function filterStack(group) {
+      document.querySelectorAll('.stack-group').forEach(el => {
+        if (group === 'all' || el.getAttribute('data-group') === group) {
+          el.classList.remove('hidden');
+        } else {
+          el.classList.add('hidden');
+        }
+      });
+
+      document.querySelectorAll('.stack-tab').forEach(btn => {
+        btn.className = "stack-tab px-3.5 py-1.5 rounded-[6px] text-[13px] text-[#6E6E73] dark:text-zinc-400 hover:text-[#141414] dark:hover:text-white transition-all";
+      });
+      const active = document.getElementById('tab-' + group);
+      if (active) {
+        active.className = "stack-tab px-3.5 py-1.5 rounded-[6px] text-[13px] bg-white dark:bg-[#262629] text-[#141414] dark:text-white font-medium shadow-sm transition-all";
+      }
+    }
+
+    function runProfileScript() {
+      const out = document.getElementById('consoleOutput');
+      const status = document.getElementById('consoleStatus');
+      out.textContent = "> Initializing Terraform & Cloud provisioners...";
+      status.textContent = "Executing";
+      setTimeout(() => {
+        out.textContent = "> Cloud Profile Initialized for Muhammad Yasin ✦";
+        status.textContent = "Exit 0 (12ms)";
+        showToast("Cloud Profile Initialized successfully ✦");
+      }, 300);
+    }
+
+    function copyProfileTS() {
+      const code = `const muhammadYasin = {\n  name: 'Muhammad Yasin',\n  role: 'Cloud & Site Reliability Engineer (SRE)',\n  cloudProviders: ['AWS', 'GCP', 'Azure'],\n  iacTools: ['Terraform', 'Kubernetes'],\n  location: 'Yogyakarta, Indonesia'\n};`;
+      copyText(code);
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      document.getElementById('toastMsg').textContent = msg;
+      t.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        t.classList.add('translate-y-20', 'opacity-0');
+      }, 2200);
+    }
+
+    function copyText(str) {
+      const ta = document.createElement('textarea');
+      ta.value = str;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        showToast("Copied: " + str.slice(0, 36));
+      } catch (e) {
+        showToast("Copy failed");
+      }
+      document.body.removeChild(ta);
+    }
+
+    window.onload = () => {
+      setTimeout(stepTypewriter, 1800);
+    };
+  </script>
+</body>
+
+</html>
