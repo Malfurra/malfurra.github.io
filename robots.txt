@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://malfurra.github.io/sitemap.xml
